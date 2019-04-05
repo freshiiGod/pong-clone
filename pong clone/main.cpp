@@ -1,32 +1,19 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include <windows.h>
-#include <random>
 #include <cmath>
 #include "constants.h"
 
-//function declarations
-int getRandomNumber(int min, int max);
-
-//random number gen setup
-namespace random
-{
-	std::mt19937 mersenne(static_cast<std::mt19937::result_type>(std::time(nullptr)));
-}
-
-//entry point of program
 int main()
 {
-	//randomly select a player's paddle to go towards. 1 = leftPaddle, 2 = rightPaddle
-	int firstPlayer{ getRandomNumber(1, 2) };
 	double ballAngle{ 0.f }; //changed later
 
 	//open SFML window
 	sf::RenderWindow window(sf::VideoMode(constants::windowWidth, constants::windowHeight),
 		"Pong Clone", sf::Style::Close);
 
-	//enable vsync
-	window.setVerticalSyncEnabled(true);
+	//cap FPS
+	window.setFramerateLimit(60);
 
 	//Ball definition and setup
 	sf::CircleShape ball(constants::ballRadius);
@@ -164,11 +151,4 @@ int main()
 	}
 
 	return 0;
-}
-
-//random number gen function
-int getRandomNumber(int min, int max)
-{
-	std::uniform_int_distribution<> die(min, max);
-	return die(random::mersenne);
 }
