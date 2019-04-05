@@ -1,0 +1,9 @@
+﻿  main.cpp
+c:\users\tyler\desktop\projects\pong clone\pong clone\main.cpp(94): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\tyler\desktop\projects\pong clone\pong clone\main.cpp(100): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\tyler\desktop\projects\pong clone\pong clone\main.cpp(105): warning C4305: 'argument': truncation from 'double' to 'float'
+  pong clone.vcxproj -> C:\Users\Tyler\Desktop\projects\pong clone\Debug\pong clone.exe
